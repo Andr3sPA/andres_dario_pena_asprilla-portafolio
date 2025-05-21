@@ -19,7 +19,7 @@ function App() {
               Andrés Peña
             </div>
             <div>
-              Ingeniero de software
+              Software engineer
             </div>
             <div>
               <Table>
@@ -125,22 +125,23 @@ function App() {
         >
           {/* Main content wrapper for the right panel */}
           <div className="flex flex-col items-center justify-center w-full gap-3"> {/* Removed h-full */}
-            <Card className="mt-5">
+            <Card className="mt-5 mx-4">
 
   <CardContent>
     <div className="flex flex-col md:flex-row items-center justify-between w-full">
       {/* Sección de texto */}
       <div className="md:w-[55%] mb-8 md:mb-0">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Rayan Adlrdard
+          Andrés Peña
         </h1>
         <span className="text-lg text-gray-600 block mb-6">
-          Front-end Developer
+          Developer
         </span>
         <p className="text-gray-600 leading-relaxed mb-8 whitespace-pre-line">
-          {`Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing
-          Elit. Et, Volutpat Feugiat Placerat Lobortis. Natoque
-          Rutrum Semper Sed Suspendisse Nunc Lectus.`}
+          {`Analytical and motivated Systems Engineering student skilled in backend development, API design,
+           and scalable solutions. Passionate about continuous learning and applying emerging technologies 
+           to solve complex challenges. Maintain a disciplined mindset through sports and fitness, enhancing 
+           focus in technical projects.`}
         </p>
       </div>
 
@@ -163,9 +164,10 @@ function App() {
       
       {/* Contenido */}
       <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-        {`Amet Minim Mollit Non Deserunt Ullamco Est Sit Aliqua Dolor
-        Do Amet Sint. Velit Officia Consequat Duis Enim Velit Mollit.
-        Lorem Ipsum`}
+        {`Backend (Spring Boot, Go, FastAPI), frontend (React, Next.js), databases (MongoDB, Oracle), 
+        and cloud tools (Vercel, Docker). Proficient in REST APIs, authentication systems (JWT), and 
+        machine learning workflows. Actively exploring DevOps, serverless architectures, and agile 
+        practices.`}
       </p>
     </div>
           </div>
@@ -180,9 +182,8 @@ function App() {
       
       {/* Contenido */}
       <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-        {`Amet Minim Mollit Non Deserunt Ullamco Est Sit Aliqua Dolor
-        Do Amet Sint. Velit Officia Consequat Duis Enim Velit Mollit.
-        Lorem Ipsum`}
+        {`B.S. in Systems Engineering (2025 Expected)
+University of Antioquia, Colombia`}
       </p>
     </div>
     <Card className="mx-4 my-2">
@@ -191,11 +192,11 @@ function App() {
             <TableBody>
               <TableRow>
                 <TableCell> 
-      <h2 className="text-lg font-semibold text-gray-900">University Of Toronto</h2>
+      <h2 className="text-lg font-semibold text-gray-900">University Of Antioquia</h2>
       <div className="flex items-center gap-2 mt-2">
         <span className="text-sm text-gray-700">Student</span>
         <span className="bg-yellow-400 text-white text-sm px-2 py-1 rounded-md">
-          Jan 1016 - Dec 2021
+          Feb 2019 - Dec 2025
         </span>
     </div>
     </TableCell>
@@ -217,7 +218,18 @@ function App() {
           </Table>
   </CardContent>
 </Card>
-
+                                        <div className="w-full">
+      {/* Título */}
+      <h1 className="text-3xl font-bold text-gray-800 mb-6">
+        Portfolio
+      </h1>
+      
+      {/* Contenido */}
+      <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+        {`B.S. in Systems Engineering (2025 Expected)
+University of Antioquia, Colombia`}
+      </p>
+    </div>
         </ResizablePanel>
       </ResizablePanelGroup>
     </>
