@@ -5,13 +5,19 @@ import { Progress } from "@/components/ui/progress"
 import { FcCommandLine } from "react-icons/fc";
 import { Card, CardContent } from './components/ui/card';
 import { SortableDynamicOverlayDemo } from './extra_skills';
+import { AppSidebar } from './components/app-sidebar';
+import { SidebarProvider } from './components/ui/sidebar';
+import { PortfolioCarousel } from './components/PortfolioCarousel';
+import { DialogDemo } from './components/hireMe';
+import { Toaster } from "@/components/ui/sonner"
 function App() {
 
   return (
     <>
+     <Toaster />
       <ResizablePanelGroup direction="horizontal" className="rounded-lg border md:min-w-[450px] ">
         <ResizablePanel className="w-2" style={{backgroundColor: '#e8f8f5'}} defaultSize={25}>
-            <div className="flex flex-col items-center justify-center h-full w-full gap-3">
+            <div className="flex flex-col items-center w-full gap-5 pt-8"> {/* Modified classes */}
              <div className="flex items-center justify-center">
               <img src="/img side bar.png" alt="Sidebar visual aid" />
             </div>
@@ -117,6 +123,7 @@ function App() {
             </div>
           </div>
         </ResizablePanel>
+        
         <ResizableHandle withHandle />
         <ResizablePanel
           className="overflow-auto" // Added overflow-auto
@@ -130,20 +137,22 @@ function App() {
   <CardContent>
     <div className="flex flex-col md:flex-row items-center justify-between w-full">
       {/* Sección de texto */}
-      <div className="md:w-[55%] mb-8 md:mb-0">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Andrés Peña
-        </h1>
-        <span className="text-lg text-gray-600 block mb-6">
-          Developer
-        </span>
-        <p className="text-gray-600 leading-relaxed mb-8 whitespace-pre-line">
-          {`Analytical and motivated Systems Engineering student skilled in backend development, API design,
-           and scalable solutions. Passionate about continuous learning and applying emerging technologies 
-           to solve complex challenges. Maintain a disciplined mindset through sports and fitness, enhancing 
-           focus in technical projects.`}
-        </p>
-      </div>
+<div className="md:w-[55%] mb-8 md:mb-0 text-left"> {/* Añade text-left para ser explícito */}
+  <h1 className="text-4xl font-bold text-gray-800 mb-4">
+    Andrés Peña
+    
+  </h1>
+  <h1 className="text-4xl font-bold text-blue-600 mb-4"> {/* Cambiado text-gray-800 a text-blue-600 */}
+    Developer
+  </h1>
+  <p className="text-gray-600 leading-relaxed mb-8 whitespace-pre-line">
+    {`Analytical and motivated Systems Engineering student skilled in backend development, API design,
+     and scalable solutions. Passionate about continuous learning and applying emerging technologies 
+     to solve complex challenges. Maintain a disciplined mindset through sports and fitness, enhancing 
+     focus in technical projects.`}
+  </p>
+  <DialogDemo/>
+</div>
 
       <div className="md:w-[40%] flex justify-center">
         <img 
@@ -203,13 +212,10 @@ University of Antioquia, Colombia`}
                 <TableCell className="h-auto whitespace-normal"> 
                   <div className="w-full text-left"> 
                     <h2 className="text-lg font-semibold text-gray-900 mb-2">
-                      Certificate Of Web Training
+                      System Engineering Career
                     </h2>
                     <p className="text-sm text-gray-500 leading-relaxed break-words">
-                      Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Amet Dapibus 
-                      Nibh Ut Faucibus Nunc, Egestas Id Amet Porttitor. Pulvinar Quisque Sed 
-                      Amet, Nulla Nunc. Eleifend Sodales Posuere Fusce Tempus Etiam Et 
-                      Pellentesque. Molestie Risus Enim Neque Eget Dui.
+                      Currently serving as a Programming Assistant, developing backend solutions and automation tools to streamline workflows. Focused on applying software architecture principles and security best practices learned through coursework to deliver efficient, scalable systems.
                     </p>
                   </div>
                 </TableCell>
@@ -223,15 +229,19 @@ University of Antioquia, Colombia`}
       <h1 className="text-3xl font-bold text-gray-800 mb-6">
         Portfolio
       </h1>
-      
-      {/* Contenido */}
-      <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-        {`B.S. in Systems Engineering (2025 Expected)
-University of Antioquia, Colombia`}
-      </p>
+      <PortfolioCarousel/>
     </div>
         </ResizablePanel>
       </ResizablePanelGroup>
+              <SidebarProvider  
+    className="h-0 w-0 overflow-hidden" // Correcto para que no ocupe espacio en el flujo
+    style={{
+      "--sidebar-width": "4rem" // Esto define el ancho del sidebar cuando está colapsado (solo íconos)
+    } as React.CSSProperties & Record<string, any>}
+>
+      <AppSidebar />
+    </SidebarProvider>
+
     </>
   )
 }
